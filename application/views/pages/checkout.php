@@ -11,7 +11,7 @@ if($this->session->userdata('logged_in')) {
 		
 <!-- //navigation -->
 <!-- breadcrumbs -->
-	<div class="breadcrumbs">
+	<div class="breadcrumbs" >
 		<div class="container">
 			<ol class="breadcrumb breadcrumb1">
 				<li><a href="home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
@@ -59,17 +59,17 @@ if($this->session->userdata('logged_in')) {
 						<input type = "hidden"  name ="qty[]" style ="width:50px;" value = "1"/>
 
 						<td class="invert"> <?php echo $product['name'] ?></td>
-						<input type = "hidden" name = "name[]" value = "<?php echo $product['name'] ?>"/>
+<!--						<input type = "hidden" name = "name[]" value = "--><?php //echo $product['name'] ?><!--"/>-->
 						
 						<td class="invert"> <?php echo $product['price'] ?></td>
-						<input type = "hidden" name = "price[]" value = "<?php echo $product['price'] ?>"/>
+<!--						<input type = "hidden" name = "price[]" value = "--><?php //echo $product['price'] ?><!--"/>-->
 
 						<td class="invert"> <?php echo $product['discount'] ?></td>
 
 
 						<td class="invert">
 							<div class="rem">
-								<div class="close1"> </div>
+								<div class="close1"> <span class="glyphicon glyphicon-trash"></span></div>
 							</div>
 							<script>$(document).ready(function(c) {
 								$('.close1').on('click', function(c){
@@ -82,7 +82,7 @@ if($this->session->userdata('logged_in')) {
 						</td>
 					</tr>
 					
-				<?php  } ?>  
+				<?php  } ?>
 				<!--quantity-->
 					<script>
 					$('.value-plus').on('click', function(){
@@ -101,7 +101,7 @@ if($this->session->userdata('logged_in')) {
 					<!-- <a href="<?php echo base_url()?>index.php/ProductController/saveCartProducts"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Checkout</a> -->
 					<!-- <input type="submit" name="submit" value="checkout" class="button"  /> -->
 
-					 <button type="submit" class="btn btn-lg btn-block btn-success" name="submit"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Checkout</button>
+					 <button type="submit" class="btn btn-lg btn-block btn-success"  name="submit"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Checkout</button>
 					 
 				</div>			  
 			</div>
