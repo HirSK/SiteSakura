@@ -1066,6 +1066,7 @@ a.sakura_agile_vimeo:hover{
 .checkout h2{
 	font-size:1em;
 	color:#212121;
+
 	text-transform:uppercase;
 	margin:0 0 3em;
 }
@@ -1231,6 +1232,7 @@ td.invert-image a img {
     top: 0.1em;
 }
 .checkout {
+
     padding: 5em 0;
 }
 /*-- //checkout --*/

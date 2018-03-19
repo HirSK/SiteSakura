@@ -23,27 +23,6 @@ class Welcome extends CI_Controller {
 
     }
 
-    // public function index()
-    // {
-
-
-    // 		$this->load->model('productModel');
-    // 		$res['products'] = $this->productModel->getDetails();
-
-    // 		$this->load->view('pages/home',$res);
-
-
-
-    // }
-
-    // function displayLoggedHome(){
-    // 	$this->load->model('productModel');
-    // 		$res['products'] = $this->productModel->getDetails();
-
-    // 		$this->load->view('pages/loggedHome',$res);
-
-    // }
-
 
     function isLoggedIn(){
 

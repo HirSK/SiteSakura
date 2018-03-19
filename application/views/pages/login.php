@@ -1,9 +1,6 @@
 <?php include 'links.php';?>
-	
-<body>
-
 <?php include 'header.php';?>
-
+<body>
 <!-- login -->
 	<div class="login">
 		<div class="container">

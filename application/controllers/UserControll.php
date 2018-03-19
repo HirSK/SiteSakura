@@ -11,17 +11,17 @@ class UserControll extends CI_Controller {
         $this->form_validation->set_rules('cpwd', 'Password Confirmation', 'trim|matches[pwd]');
 
         if($this->form_validation->run() == false){
-            $this->load->view('pages/registered');
+            $this->load->view('pages/registration');
         }else{
             $this->load->model('UserModel');
             $response = $this->UserModel->insertUserdata();
 
             if($response){
                 $this->session->set_flashdata('msg','Registered successfully..please login');
-                redirect('registered');
+                redirect('registration');
             }else{
                 $this->session->set_flashdata('msg','Something went wrong');
-                redirect('registered');
+                redirect('registration');
             }
 
         }

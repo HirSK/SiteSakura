@@ -3,7 +3,13 @@
 
 <body>
 
-<?php include 'header.php';?>
+<?php
+if($this->session->userdata('logged_in')) {
+    include 'loggedHeader.php';
+}else{
+    include 'header.php';
+};
+?>
 
 <!-- register -->
 	<div class="register">

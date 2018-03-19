@@ -66,7 +66,7 @@ $route['displayHome'] = 'PageController/displayHome';
 
 $route['adminLogOut'] = 'AdminController/logOut';
 
-$route['registered'] = 'PageController/createAccount';
+$route['registration'] = 'PageController/createAccount';
 
 $route['login'] = 'PageController/login';
 

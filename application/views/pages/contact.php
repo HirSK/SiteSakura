@@ -1,6 +1,12 @@
 <?php include 'links.php';?>
 <body>
-<?php include 'loggedHeader.php';?>
+<?php
+if($this->session->userdata('logged_in')) {
+    include 'loggedHeader.php';
+}else{
+    include 'header.php';
+};
+?>
 <!-- breadcrumbs -->
 	<div class="breadcrumbs">
 		<div class="container">

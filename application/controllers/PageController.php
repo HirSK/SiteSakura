@@ -54,7 +54,7 @@ class PageController extends CI_Controller{
 	}
 	
 	function createAccount(){
-		$this->load->view('pages/registered');
+		$this->load->view('pages/registration');
 	}
 
 	function contacttUs(){
