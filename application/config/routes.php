@@ -56,6 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 // user defined routes
 $route['admin'] = 'AdminController';
 
+$route['loadCustomers']="CustomerController/viewCustomers";
+
+
 $route['addAdmin'] = 'PageController/registerUser';
 
 $route['addProduct'] = 'PageController/addNewProduct';
@@ -81,3 +84,6 @@ $route['save-shopping-cart'] = "ProductController/saveCartProducts";
 $route['home'] = "Welcome";
 
 $route['loggedHome'] = "Welcome/displayLoggedHome";
+
+
+//$route['ordersTodeliver']="OrderController/ordersTodeliver";
