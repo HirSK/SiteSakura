@@ -68,9 +68,14 @@ if($this->session->userdata('logged_in')) {
                                                                 <input type="hidden" name="discount_amount" value="<?php echo $pro->product_discount ?>" />
                                                                 
                                                                 <input type="submit" name="submit" value="Add to cart" class="button"  />
+                                                                <br>
                                                             </fieldset>
                                                         </form>
+
                                                     </div>
+                                                        <input type="hidden" href="<?php echo base_url().'ProductController/buy/'.$pro->product_id; ?>" name="submit" value="Buy now" class="button" />
+                                                        
+                                                    
                                                 </div>
                                             </figure>
                                         </div>

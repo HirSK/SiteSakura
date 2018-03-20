@@ -31,7 +31,7 @@ class UserControll extends CI_Controller {
     public function loginUser(){
 
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
-        $this->form_validation->set_rules('pwd', 'Password', 'trim|min_length[8]|max_length[10]');
+        //$this->form_validation->set_rules('pwd', 'Password', 'trim|min_length[8]|max_length[10]');
 
         if($this->form_validation->run() == false){
 
@@ -39,7 +39,7 @@ class UserControll extends CI_Controller {
         }else{
 
             $username = $this->input->post('email');
-            $password = sha1($this->input->post('pwd'));
+            $password = $this->input->post('pwd');
 
             $this->load->model('UserModel');
 
