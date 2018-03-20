@@ -117,7 +117,23 @@ if($this->session->userdata('logged_in')) {
                                                                 </fieldset>
                                                             </form>
 
-                                                            <a href="<?php echo base_url().'index.php/ProductController/buy/'.$pro->product_id; ?>" >Buy now</a>
+                                                           
+                                                        </div>
+                                                        <div class="snipcart-details top_brand_home_details" id="buy item">
+                                                            <form action="<?php echo base_url().'index.php/ProductController/buy/'.$pro->product_id; ?>" method="post">
+                                                                <fieldset>                                                                                                                   <input type="hidden" name="image" value="<?php echo $pro->product_image ?>" />
+
+                                                                    <input type="hidden" name="id" value="<?php echo $pro->product_id ?>" />
+
+                                                                    <input type="hidden" name="item_name" value="<?php echo $pro->product_title ?>" />
+
+                                                                    <input type="hidden" name="amount" value="<?php echo $pro->product_price ?>" />
+
+                                                                    <input type="hidden" name="discount_amount" value="<?php echo $pro->product_discount ?>" />
+
+                                                                    <input type="submit" name="submit" value="Buy Now" class="button"  />
+                                                                </fieldset>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </figure>
