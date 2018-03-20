@@ -232,6 +232,39 @@ class ProductController extends CI_Controller{
         	$this->load->view('admin/today_orders_view',$data);
         }
 
+        function buy($id){
+	        //Set variables for paypal form
+	        $returnURL = base_url().'paypal/success'; //payment success url
+	        $cancelURL = base_url().'paypal/cancel'; //payment cancel url
+	        $notifyURL = base_url().'paypal/ipn'; //ipn url
+	        //get particular product data
+	        $userID = $this->session->userdata('user_id');
+	        //$product = $this->productModel->getDetails($userID);
+	         //current user id 
+	         $product = array(
+               'id'      => $this->input->post('id'), 
+               'name'    =>  $this->input->post('item_name'),         
+               'price'   => $this->input->post('amount'),
+               'qty' =>1,
+               'discount' =>$this->input->post('discount_amount'),
+               'image' =>$this->input->post('image')
+               
+            );
+
+	        //$logo = base_url().'assets/images/codexworld-logo.png';
+	        
+	        $this->paypal_lib->add_field('return', $returnURL);
+	        $this->paypal_lib->add_field('cancel_return', $cancelURL);
+	        $this->paypal_lib->add_field('notify_url', $notifyURL);
+	        $this->paypal_lib->add_field('item_name', $product['name']);
+	        $this->paypal_lib->add_field('custom', $userID);
+	        $this->paypal_lib->add_field('item_number',  $product['id']);
+	        $this->paypal_lib->add_field('amount',  $product['price']);        
+	        //$this->paypal_lib->image($logo);
+	        
+	        $this->paypal_lib->paypal_auto_form();
+    }
+
 		
 
 

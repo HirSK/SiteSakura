@@ -116,6 +116,8 @@ if($this->session->userdata('logged_in')) {
                                                                     <input type="submit" name="submit" value="Add to cart" class="button"  />
                                                                 </fieldset>
                                                             </form>
+
+                                                            <a href="<?php echo base_url().'index.php/ProductController/buy/'.$pro->product_id; ?>" >Buy now</a>
                                                         </div>
                                                     </div>
                                                 </figure>

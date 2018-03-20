@@ -19,7 +19,7 @@
                 <?php echo form_open('UserControll/loginUser');?>
 
 					<input type="email" placeholder="Email Address" maxlength="250" required name="email">
-					<input type="password" placeholder="Password"  minlength="8" maxlength="10" required=" " name="pwd" >
+					<input type="password" placeholder="Password"  required=" " name="pwd" >
 					<div class="forgot">
 						<a href="#">Forgot Password?</a>
 					</div>
