@@ -3,21 +3,23 @@
 class UserControll extends CI_Controller {
 
     public function registerUser(){
-
+        $data['title']="Registration";
         $this->form_validation->set_rules('fname', 'First Name', 'trim|required');
         $this->form_validation->set_rules('lname', 'Last Name', 'trim|required');
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|is_unique[customer_registration.userName]');
         $this->form_validation->set_rules('pwd', 'Password', 'trim|min_length[8]|max_length[10]');
         $this->form_validation->set_rules('cpwd', 'Password Confirmation', 'trim|matches[pwd]');
 
-        if($this->form_validation->run() == false){
-            $this->load->view('pages/registration');
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('pages/registration',$data);
         }else{
             $this->load->model('UserModel');
             $response = $this->UserModel->insertUserdata();
 
             if($response){
-                $this->session->set_flashdata('msg','Registered successfully..please login');
+                $link=anchor('login','Login');
+
+                $this->session->set_flashdata('msg','Registered successfully..Please '.$link.'');
                 redirect('registration');
             }else{
                 $this->session->set_flashdata('msg','Something went wrong');
